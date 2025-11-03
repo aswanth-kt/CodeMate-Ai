@@ -6,6 +6,7 @@ import helmet from "helmet";
 import OpenAI from "openai";
 
 const app = express();
+console.log("Allowed origin:", process.env.FRONTEND_URL);
 
 // Security middleware
 app.use(helmet());
