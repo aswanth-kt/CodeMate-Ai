@@ -6,8 +6,8 @@ export async function explain(prevState, formData) {
 
     try {
         console.log("VITE_API_BASE_URL:", import.meta.env.VITE_API_BASE_URL)
-        // const localBackendURL = "http://localhost:3001/api";
-        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/explain-code`, {
+        const localBackendURL = "http://localhost:3001/api";
+        const res = await fetch(`${process.env.VITE_API_BASE_URL}/explain-code`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ code, language })
