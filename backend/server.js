@@ -35,7 +35,7 @@ const client = new OpenAI({
     apiKey: API_KEY,
 });
 
-app.post("/api/explain-code", async (req, res) => {
+app.post("/explain-code", async (req, res) => {
     try {
         const { code, language } = req.body; 
 
