@@ -10,6 +10,8 @@ export async function explain(prevState, formData) {
                 ? 'http://localhost:3001'
                 : import.meta.env.VITE_API_BASE_URL;
 
+        console.log("apiBaseUrl:", apiBaseUrl)
+
         const res = await fetch(`${apiBaseUrl}/api/explain-code`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },

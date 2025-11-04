@@ -12,7 +12,7 @@ const app = express();
 app.use(helmet());
 app.use(
     cors({
-        origin: [process.env.FRONTEND_URL || process.env.LOCAL_FRONTEND_URL],
+        origin: process.env.FRONTEND_URL || process.env.LOCAL_FRONTEND_URL,
         credentials: true,
         methods: ["GET", "POST", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
@@ -35,7 +35,7 @@ const client = new OpenAI({
     apiKey: API_KEY,
 });
 
-app.post("/explain-code", async (req, res) => {
+app.post("/api/explain-code", async (req, res) => {
     try {
         const { code, language } = req.body; 
 
