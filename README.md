@@ -32,4 +32,3 @@ It’s designed for developers, students, and learners who want quick, accurate 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/aswanth-kt/CodeMate-Ai.git
-cd codemate-ai
