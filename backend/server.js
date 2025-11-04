@@ -6,18 +6,18 @@ import helmet from "helmet";
 import OpenAI from "openai";
 
 const app = express();
-// console.log("Allowed origin:", process.env.FRONTEND_URL);
 
 // Security middleware
 app.use(helmet());
 app.use(
     cors({
-        origin: process.env.FRONTEND_URL || process.env.LOCAL_FRONTEND_URL,
+        origin: process.env.FRONTEND_URL,
         credentials: true,
         methods: ["GET", "POST", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
+console.log("Allowed origin:", process.env.FRONTEND_URL);
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
